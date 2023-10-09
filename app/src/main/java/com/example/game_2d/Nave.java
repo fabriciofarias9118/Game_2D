@@ -38,7 +38,9 @@ public class Nave {
                 false);
     }
 
-    public void adicionarCamada(Canvas canvas){}
+    public void adicionarCamada(Canvas canvas){
+        canvas.drawBitmap(nave, hangar - RAIO, altura, null);
+    }
 
     public int getHangar() {
         return hangar;
