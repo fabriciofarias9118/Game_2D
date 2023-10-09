@@ -36,10 +36,13 @@ public class Obstaculo {
 
     }
 
-    public void adicionarCamada(Canvas canvas){}
+    public void adicionarObstaculoNoCenario(Canvas canvas){
+        desenharObstaculoInferiorNoCenario(canvas);
+        desenharObstaculoSuperiorNoCenario(canvas);
+    }
 
-    public void desenharObstaculoInferiorNaCamada(Canvas canvas){}
-    public void desenharObstaculoSuperiorNaCamada(Canvas canvas){}
+    public void desenharObstaculoInferiorNoCenario(Canvas canvas){}
+    public void desenharObstaculoSuperiorNoCenario(Canvas canvas){}
     public void movimentarObstaculo(){}
 
     public int gerarValorAleatorio(){return 1;}
