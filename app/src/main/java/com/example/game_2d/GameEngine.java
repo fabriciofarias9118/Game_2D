@@ -6,9 +6,10 @@ import android.view.SurfaceView;
 /*
  *  TODO: Clase Game Over
  *  TODO: Clase Obstaculo
- *  TODO: Clase Obstaculos **
+ *  TODO: Clase Obstaculos ** (movimento)
  *  TODO: Clase Colisões
  *  TODO: Clase Nove movimento
+ *  TODO: Consumir todas as classes e metodos para rodar o game
  */
 
 public class GameEngine extends SurfaceView {
