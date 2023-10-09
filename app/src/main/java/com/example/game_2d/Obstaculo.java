@@ -18,15 +18,19 @@ public class Obstaculo {
     private Bitmap obstaculoInfetior;
     private Bitmap obstaculoSuperior;
 
+    // CRIANDO OS OBSTACULOS
     public Obstaculo(Cenario cenario, int posicao, Context context){
+
         this.posicao = posicao;
         this.cenario = cenario;
 
+        // GERAR TAMANHOS DINAMICOS DE OBSTACULOS
         this.alturaDoObstaculoInferior = cenario.getAltura() - TAMANHO_DO_OBSTACULO + gerarValorAleatorio();
         this.alturaDoObstaculoSurperior = TAMANHO_DO_OBSTACULO + gerarValorAleatorio();
 
         Bitmap bp = BitmapFactory.decodeResource(context.getResources(), R.drawable.objeto_obstaculo);
 
+        // ATRIBUNDO OS TAMAMHOS E O DESENHO COMO OBSTACULOS SUPERIOR E INFERIOR.
         this.obstaculoInfetior = Bitmap.createScaledBitmap(bp,LARGURA_DO_OBSTACULO, this.alturaDoObstaculoInferior, false);
         this.obstaculoSuperior = Bitmap.createScaledBitmap(bp,LARGURA_DO_OBSTACULO, this.alturaDoObstaculoSurperior, false);
 
