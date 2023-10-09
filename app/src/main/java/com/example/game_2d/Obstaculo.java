@@ -19,7 +19,7 @@ public class Obstaculo {
     Bitmap obstaculoSuperior;
 
     // CRIANDO OS OBSTACULOS
-    public Obstaculo(Cenario cenario, int posicao, Context context){
+    public Obstaculo(Cenario cenario, int posicao, Context context) {
 
         this.posicao = posicao;
         this.cenario = cenario;
@@ -31,33 +31,47 @@ public class Obstaculo {
         Bitmap bp = BitmapFactory.decodeResource(context.getResources(), R.drawable.objeto_obstaculo);
 
         // ATRIBUNDO OS TAMAMHOS E O DESENHO COMO OBSTACULOS SUPERIOR E INFERIOR.
-        this.obstaculoInfetior = Bitmap.createScaledBitmap(bp,LARGURA_DO_OBSTACULO, this.alturaDoObstaculoInferior, false);
-        this.obstaculoSuperior = Bitmap.createScaledBitmap(bp,LARGURA_DO_OBSTACULO, this.alturaDoObstaculoSurperior, false);
+        this.obstaculoInfetior = Bitmap.createScaledBitmap(bp, LARGURA_DO_OBSTACULO, this.alturaDoObstaculoInferior, false);
+        this.obstaculoSuperior = Bitmap.createScaledBitmap(bp, LARGURA_DO_OBSTACULO, this.alturaDoObstaculoSurperior, false);
 
     }
 
-    public void adicionarObstaculoNoCenario(Canvas canvas){
+    public void adicionarObstaculoNoCenario(Canvas canvas) {
         desenharObstaculoInferiorNoCenario(canvas);
         desenharObstaculoSuperiorNoCenario(canvas);
     }
 
-    public void desenharObstaculoInferiorNoCenario(Canvas canvas){
+    public void desenharObstaculoInferiorNoCenario(Canvas canvas) {
         canvas.drawBitmap(obstaculoInfetior, posicao, alturaDoObstaculoInferior, null);
     }
-    public void desenharObstaculoSuperiorNoCenario(Canvas canvas){
+
+    public void desenharObstaculoSuperiorNoCenario(Canvas canvas) {
         canvas.drawBitmap(obstaculoSuperior, posicao, alturaDoObstaculoSurperior, null);
     }
-    public void movimentarObstaculo(){
+
+    public void movimentarObstaculo() {
         posicao -= 5;
     }
 
-    public int gerarValorAleatorio(){return 1;}
+    public int gerarValorAleatorio() {
+        return (int) (Math.random()*150);
+    }
 
-    public int getPosicao(){return posicao;}
-    public boolean verificarSeObstaculoSaiuDoCenario(){return true;}
-    public boolean verificarColisaoVertical(){return true;}
-    public boolean verificarColisaoHorizontal(){return true;}
+    public int getPosicao() {
+        return posicao;
+    }
 
+    public boolean verificarSeObstaculoSaiuDoCenario() {
+        return posicao + LARGURA_DO_OBSTACULO < 0;
+    }
+
+    public boolean verificarColisaoVertical() {
+        return true;
+    }
+
+    public boolean verificarColisaoHorizontal() {
+        return true;
+    }
 
 
 }
