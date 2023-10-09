@@ -13,6 +13,7 @@ public class GameMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_menu);
 
+        Cenario cenario = new Cenario(this);
 
         Intent intent = new Intent(GameMenu.this, MainActivity.class);
         startActivity(intent);
