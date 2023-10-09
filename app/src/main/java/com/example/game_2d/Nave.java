@@ -10,7 +10,7 @@ public class Nave {
     int hangar = 80;
     int altura = 120;
 
-    static final int RAIO = 55;
+    public static final int RAIO = 55;
 
     private Som som;
 

@@ -65,12 +65,13 @@ public class Obstaculo {
         return posicao + LARGURA_DO_OBSTACULO < 0;
     }
 
-    public boolean verificarColisaoVertical() {
-        return true;
+    public boolean verificarColisaoVertical(Nave nave) {
+        return nave.getAltura() - Nave.RAIO < this.alturaDoObstaculoSurperior
+                || nave.getAltura() + Nave.RAIO > this.alturaDoObstaculoInferior ;
     }
 
-    public boolean verificarColisaoHorizontal() {
-        return true;
+    public boolean verificarColisaoHorizontal(Nave nave) {
+        return this.posicao - nave.hangar < Nave.RAIO;
     }
 
 

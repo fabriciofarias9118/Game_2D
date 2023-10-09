@@ -67,8 +67,15 @@ public class Obstaculos {
         }
 
     }
-    public boolean verificarColisao(){
-        return true;
+    public boolean verificarColisao(Nave nave){
+
+        for (Obstaculo obstaculo: obstaculoList){
+            if (obstaculo.verificarColisaoVertical(nave)
+                && obstaculo.verificarColisaoHorizontal(nave)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }
