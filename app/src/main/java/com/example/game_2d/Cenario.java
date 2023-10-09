@@ -24,7 +24,11 @@ public class Cenario {
         Log.i("LogCenario", "Cenario: ");
     }
 
-    public float getLargura() {
-        return 1;
+    public int getLargura() {
+        return metrics.widthPixels;
+    }
+
+    public int geAltura() {
+        return metrics.heightPixels;
     }
 }
