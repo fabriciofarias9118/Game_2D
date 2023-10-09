@@ -2,23 +2,35 @@ package com.example.game_2d;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 
 public class Obstaculo {
 
     public static final int LARGURA_DO_OBSTACULO = 150;
-    public static final int ALTURA_DO_OBSTACULO = 80;
-
+    public static final int TAMANHO_DO_OBSTACULO = 80;
     private int alturaDoObstaculoInferior;
     private int alturaDoObstaculoSurperior;
-    private int posicao;
 
+    private int posicao;
     private Cenario cenario;
 
     private Bitmap obstaculoInfetior;
-    private Bitmap obstaculoSuperio;
+    private Bitmap obstaculoSuperior;
 
-    public Obstaculo(Cenario cenario, int posicao, Context context){}
+    public Obstaculo(Cenario cenario, int posicao, Context context){
+        this.posicao = posicao;
+        this.cenario = cenario;
+
+        this.alturaDoObstaculoInferior = cenario.getAltura() - TAMANHO_DO_OBSTACULO + gerarValorAleatorio();
+        this.alturaDoObstaculoSurperior = TAMANHO_DO_OBSTACULO + gerarValorAleatorio();
+
+        Bitmap bp = BitmapFactory.decodeResource(context.getResources(), R.drawable.objeto_obstaculo);
+
+        this.obstaculoInfetior = Bitmap.createScaledBitmap(bp,LARGURA_DO_OBSTACULO, this.alturaDoObstaculoInferior, false);
+        this.obstaculoSuperior = Bitmap.createScaledBitmap(bp,LARGURA_DO_OBSTACULO, this.alturaDoObstaculoSurperior, false);
+
+    }
 
     public void adicionarCamada(Canvas canvas){}
 

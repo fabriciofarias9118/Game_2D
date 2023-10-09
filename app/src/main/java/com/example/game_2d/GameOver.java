@@ -20,7 +20,7 @@ public class GameOver {
         // DESENHANDO O RETANGULO TRANSPARENTE
         VERMELHO.getTextBounds(texto,0, texto.length(), LimiteDoTexto);
         // DESENHANDO O TEXTO
-        canvas.drawText(texto, (cenario.getLargura()/2)-300, cenario.geAltura(), VERMELHO);
+        canvas.drawText(texto, (cenario.getLargura()/2)-300, cenario.getAltura(), VERMELHO);
 
     }
 }

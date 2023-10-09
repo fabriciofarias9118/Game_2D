@@ -28,7 +28,7 @@ public class Cenario {
         return metrics.widthPixels;
     }
 
-    public int geAltura() {
+    public int getAltura() {
         return metrics.heightPixels;
     }
 }
