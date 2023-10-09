@@ -17,11 +17,34 @@ public class Obstaculos {
     Pontuacao pontuacao;
 
     int maximo = 0;
+    int posicaoInicial = 0;
 
     Context context;
 
+    //  CRIA A LISTA DE OBSTACULOS
+    public Obstaculos(Cenario cenario, Pontuacao pontuacao, Context context){
+
+        this.cenario = cenario;
+        this.pontuacao = pontuacao;
+        this.context = context;
+
+        for (int i = 0; i < QUANTIDADE_DE_OBSTACULOS; i++){
+
+            posicaoInicial += DISTANCIA_ENTRE_OBSTACULOS;
+            obstaculoList.add(new Obstaculo(cenario, posicaoInicial, context));
+
+        }
+
+        for (Obstaculo obstaculo: obstaculoList){
+            maximo = Math.max(obstaculo.getPosicao(),maximo);
+        }
+
+    }
+
     public void adicionarCamada(){}
     public void moverObstaculo(){}
-    public boolean verificarColisao(){}
+    public boolean verificarColisao(){
+        return true;
+    }
 
 }
