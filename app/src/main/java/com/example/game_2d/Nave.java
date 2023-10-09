@@ -2,6 +2,7 @@ package com.example.game_2d;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 
 public class Nave {
@@ -15,13 +16,27 @@ public class Nave {
 
     private Cenario cenario;
 
-    private Bitmap Nave;
+    private Context context;
+
+    private Bitmap nave;
 
     boolean isRodape = false;
 
     int bordaSuperior;
 
-    public Nave(Cenario cenario, Context context, Som som){}
+    public Nave(Cenario cenario, Context context, Som som){
+
+        this.cenario = cenario;
+        this.som = som;
+        this.context = context;
+
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.nave);
+
+        this.nave = Bitmap.createScaledBitmap(bitmap,
+                RAIO*2,
+                RAIO*2,
+                false);
+    }
 
     public void adicionarCamada(Canvas canvas){}
 
