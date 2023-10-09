@@ -12,7 +12,7 @@ public class Obstaculo {
     int alturaDoObstaculoInferior;
     int alturaDoObstaculoSurperior;
 
-    int posicao;
+    static int posicao;
     Cenario cenario;
 
     Bitmap obstaculoInfetior;
@@ -49,7 +49,7 @@ public class Obstaculo {
         canvas.drawBitmap(obstaculoSuperior, posicao, alturaDoObstaculoSurperior, null);
     }
 
-    public void movimentarObstaculo() {
+    public static void movimentarObstaculo() {
         posicao -= 5;
     }
 
