@@ -23,4 +23,8 @@ public class Cenario {
 
         Log.i("LogCenario", "Cenario: ");
     }
+
+    public float getLargura() {
+        return 1;
+    }
 }
