@@ -9,14 +9,14 @@ public class Obstaculo {
 
     public static final int LARGURA_DO_OBSTACULO = 150;
     public static final int TAMANHO_DO_OBSTACULO = 80;
-    private int alturaDoObstaculoInferior;
-    private int alturaDoObstaculoSurperior;
+    int alturaDoObstaculoInferior;
+    int alturaDoObstaculoSurperior;
 
-    private int posicao;
-    private Cenario cenario;
+    int posicao;
+    Cenario cenario;
 
-    private Bitmap obstaculoInfetior;
-    private Bitmap obstaculoSuperior;
+    Bitmap obstaculoInfetior;
+    Bitmap obstaculoSuperior;
 
     // CRIANDO OS OBSTACULOS
     public Obstaculo(Cenario cenario, int posicao, Context context){
@@ -41,8 +41,12 @@ public class Obstaculo {
         desenharObstaculoSuperiorNoCenario(canvas);
     }
 
-    public void desenharObstaculoInferiorNoCenario(Canvas canvas){}
-    public void desenharObstaculoSuperiorNoCenario(Canvas canvas){}
+    public void desenharObstaculoInferiorNoCenario(Canvas canvas){
+        canvas.drawBitmap(obstaculoInfetior, posicao, alturaDoObstaculoInferior, null);
+    }
+    public void desenharObstaculoSuperiorNoCenario(Canvas canvas){
+        canvas.drawBitmap(obstaculoSuperior, posicao, alturaDoObstaculoSurperior, null);
+    }
     public void movimentarObstaculo(){}
 
     public int gerarValorAleatorio(){return 1;}
