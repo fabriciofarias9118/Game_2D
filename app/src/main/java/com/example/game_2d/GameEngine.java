@@ -4,7 +4,14 @@ import android.content.Context;
 import android.view.SurfaceView;
 
 /*
-*  Game Engine
+ *  TODO: Clase Core
+ *  TODO: Clase Sons
+ *  TODO: Clase Obstaculo
+ *  TODO: Clase Obstaculos **
+ *  TODO: Clase Colisões
+ *  TODO: Clase Pontuação
+ *  TODO: Clase Game Over
+ *  TODO: Clase Cenario do game (Tela - UI/UX)
  */
 
 public class GameEngine extends SurfaceView {
