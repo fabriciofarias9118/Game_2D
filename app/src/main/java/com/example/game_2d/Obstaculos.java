@@ -1,6 +1,7 @@
 package com.example.game_2d;
 
 import android.content.Context;
+import android.graphics.Canvas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,11 @@ public class Obstaculos {
 
     }
 
-    public void adicionarCamada(){}
+    public void adicionarCamada(Canvas canvas){
+        for (Obstaculo obstaculo: obstaculoList){
+            obstaculo.adicionarObstaculoNoCenario(canvas);
+        }
+    }
     public void moverObstaculo(){}
     public boolean verificarColisao(){
         return true;
