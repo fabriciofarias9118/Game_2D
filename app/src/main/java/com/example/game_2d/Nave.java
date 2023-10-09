@@ -42,6 +42,22 @@ public class Nave {
         canvas.drawBitmap(nave, hangar - RAIO, altura, null);
     }
 
+    public void navegacaoDown(){
+        isRodape = altura + RAIO > cenario.getAltura();
+
+        if (!isRodape){
+            this.altura += 5;
+        }
+    }
+    public void navegacaoUp(){
+        bordaSuperior = altura - RAIO;
+
+        if (bordaSuperior > 0 ){
+            som.playSom(Som.MOVIMENTO);
+            this.altura -= 100;
+        }
+    }
+
     public int getHangar() {
         return hangar;
     }
