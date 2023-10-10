@@ -8,6 +8,8 @@ public class Cores {
         Paint corTextoPontos = new Paint();
         corTextoPontos.setColor(0xFFFF0000);
 
+
+
         return corTextoPontos;
     }
 

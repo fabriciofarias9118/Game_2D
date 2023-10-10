@@ -13,6 +13,7 @@ public class Pontuacao {
     private int contadorDeVidas = 0;
 
     private Cenario cenario;
+    Canvas canvas;
 
 
     // CRIANDO CAMADAS PARA ADICIONAR TEXTOS
@@ -38,4 +39,16 @@ public class Pontuacao {
     public int getContadorDePontos() {
         return contadorDePontos;
     }
+    public static Paint getVIDAS(){
+        return VIDAS;
+    }
+
+    public int getVidas(){
+        return contadorDeVidas;
+    }
+    public void setVidas(int vidas){
+        this.contadorDeVidas = vidas;
+    }
+
+
 }

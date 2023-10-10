@@ -68,7 +68,6 @@ public class Obstaculos {
 
     }
     public boolean verificarColisao(Nave nave){
-
         for (Obstaculo obstaculo: obstaculoList){
             if (obstaculo.verificarColisaoVertical(nave)
                 && obstaculo.verificarColisaoHorizontal(nave)){

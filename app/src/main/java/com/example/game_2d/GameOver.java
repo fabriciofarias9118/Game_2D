@@ -8,7 +8,7 @@ public class GameOver {
     public static final Paint VERMELHO = Cores.corTextoPontos();
 
     private Cenario cenario;
-    private GameOver(Cenario cenario){
+    GameOver(Cenario cenario){
         this.cenario = cenario;
     }
 

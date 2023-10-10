@@ -9,50 +9,42 @@ public class Nave {
 
     int hangar = 80;
     int altura = 120;
-
     public static final int RAIO = 55;
-
     private Som som;
-
     private Cenario cenario;
-
     private Context context;
-
     private Bitmap nave;
-
     boolean isRodape = false;
-
     int bordaSuperior;
 
-    public Nave(Cenario cenario, Context context, Som som){
+    public Nave(Cenario cenario, Context context, Som som) {
 
         this.cenario = cenario;
         this.som = som;
         this.context = context;
 
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.nave);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.nave);
 
         this.nave = Bitmap.createScaledBitmap(bitmap,
-                RAIO*2,
-                RAIO*2,
+                RAIO * 2,
+                RAIO * 2,
                 false);
     }
 
-    public void adicionarCamada(Canvas canvas){
+    public void adicionarCamada(Canvas canvas) {
         canvas.drawBitmap(nave, hangar - RAIO, altura, null);
     }
 
-    public void navegacaoDown(){
+    public void navegacaoDown() {
         isRodape = altura + RAIO > cenario.getAltura();
-
-        if (!isRodape){
+        if (!isRodape) {
             this.altura += 5;
         }
     }
-    public void navegacaoUp(){
-        bordaSuperior = altura - RAIO;
 
-        if (bordaSuperior > 0 ){
+    public void navegacaoUp() {
+        bordaSuperior = altura - RAIO;
+        if (bordaSuperior > 0) {
             som.playSom(Som.MOVIMENTO);
             this.altura -= 100;
         }
